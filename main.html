@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Recipe Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lora', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFDF6;
+      color: #1A2A40;
+    }
+
+    .navbar {
+      background-color: #1A2A40;
+      padding: 15px 0;
+    }
+
+    .navbar-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .navbar-title {
+      font-size: 1.5em;
+      font-family: 'Playfair Display', serif;
+      color: white;
+      margin: 0;
+    }
+
+    .nav-links a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .featured-recipes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .recipe-card {
+      background-color: #FFF7EB;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .recipe-card-content {
+      padding: 15px;
+    }
+
+    .recipe-card h3 {
+      margin: 0 0 10px;
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-content">
+      <h1 class="navbar-title">My Recipe Collection</h1>
+      <div class="nav-links">
+        <a href="recipesperson.html">Recipes by Person</a>
+        <a href="categories.html">Recipes by Type</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="intro">
+      <p>Welcome to my personal collection of cherished recipes — gathered from friends, family, and mentors over the years. These aren’t just dishes, they’re memories and traditions.</p>
+      <p>Recipes are organized by the person who shared them with me. You can explore by name or enjoy a few of my current favorites below.</p>
+    </div>
+
+    <h2>Featured Recipes</h2>
+    <div class="featured-recipes">
+      <div class="recipe-card">
+        <a href="macandcheese.html">
+          <img src="images/macaroni.jpg" alt="Mac and Cheese">
+          <div class="recipe-card-content">
+            <h3>Macaroni and Cheese</h3>
+            <p>From Randy Bussy – A rich, creamy, crowd-pleasing classic.</p>
+          </div>
+        </a>
+      </div>
+      <div class="recipe-card">
+        <a href="cheesecake.html">
+          <img src="images/Cheesecake.jpg" alt="Mom's Cheesecake">
+          <div class="recipe-card-content">
+            <h3>Mom's Cheesecake</h3>
+            <p>From Linda Juliano – A beloved family dessert passed down with love.</p>
+          </div>
+        </a>
+      </div>
+      <div class="recipe-card">
+        <a href="applepie.html">
+          <img src="images/applepie.jpg" alt="Grandma Maxine's Apple Pie">
+          <div class="recipe-card-content">
+            <h3>Grandma Maxine's Apple Pie</h3>
+            <p>From Grandma Maxine – A timeless classic that's always warm, sweet, and comforting.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

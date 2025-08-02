@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grandma Maxine's Apple Pie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Lora', serif; margin: 0; padding: 0; background-color: #FFFDF6; color: #1A2A40; }
+        .navbar { background-color: #1A2A40; padding: 15px 0; }
+        .navbar-content { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        .navbar-title { font-size: 1.5em; font-family: 'Playfair Display', serif; color: white; margin: 0; }
+        .home-button { background-color: white; color: #1A2A40; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .chef-bio { display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; }
+        .chef-bio img { width: 180px; height: auto; border-radius: 8px; object-fit: cover; }
+        .chef-bio p { font-size: 1.05em; line-height: 1.6; }
+        h1 { font-size: 2.2em; color: #050505; text-align: center; }
+        .intro { background-color: #FFF7EB; padding: 20px; border-left: 5px solid #E5C4A1; margin: 20px 0; font-size: 1.1em; line-height: 1.6; }
+        .notes { padding: 20px; margin: 20px 0; font-size: 1.1em; line-height: 1.6; }
+        h2 { font-size: 1.8em; color: #050505; margin-top: 30px; border-bottom: 2px solid #E5C4A1; padding-bottom: 5px; }
+        ul, ol { padding-left: 25px; font-size: 1.1em; line-height: 1.6; }
+        .print-button { display: block; text-align: center; background-color: #1A2A40; color: white; padding: 10px; margin-top: 20px; border-radius: 5px; text-decoration: none; }
+        .print-button:hover { background-color: #0F1A2B; }
+        .no-print { display: block; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-content">
+            <h1 class="navbar-title">My Recipe Collection</h1>
+            <a href="main.html" class="home-button">Home</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="chef-bio">
+            <img src="images/grandmamaxine2.jpg" alt="Grandma Maxine">
+            <p>
+                Grandma Maxine, also know as Grandma Ingram, or Grandma Magazine was such a kind and loving grandmother. She loved her grandchildren more than anything. As kids 
+                we spent a lot of time at her house, playing in the backyard, the treehouse, under the couch, and in the basement. She had incredible patience with us and never got upset. She 
+                was an incredible cook who loved to read recipes in her spare time. I miss her.
+            </p>
+        </div>
+
+        <h1>Grandma Maxine's Apple Pie</h1>
+
+        <div class="intro">
+            <div class="chef-bio" style="flex-direction: row-reverse;">
+                <img class="no-print" src="images/applepie.jpg" alt="Apple Pie" style="width:30%; height:auto;">
+                <div>
+                    <p>Grandma Maxine's apple pie is an icon in our family. No holiday would be complete without Grandma baking an apple pie. She made a lot of different desserts but this is definitely 
+                        the most legendary. It tastes like love.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Ingredients</h2>
+        <h3>Filling</h3>
+        <ul>
+            <li>4 C Macintosh, Gala, or Jonathan Apples, peeled and sliced</li>
+            <li>1 C Sugar</li>
+            <li>1 tsp Nutmeg</li>
+            <li>1/8 tsp Salt</li>
+            <li>3 Tbl All Purpose Flour</li>
+            <li>1/2 tsp Cinnamon</li>
+            <li>1/4 C Brown Sugar</li>
+            <li>3-4 Thin Slices Butter</li>
+        </ul>
+
+        <h3>Crust</h3>
+        <ul>
+            <li>2 1/4 C All Purpose Flour</li>
+            <li>1 tsp Salt</li>
+            <li>2/3 C Crisco</li>
+            <li>1/2 C Water (more if needed)</li>
+        </ul>
+
+        <h3>Crust Topping</h3>
+        <ul>
+            <li>Sugar</li>
+            <li>Cinnamon</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol>
+            <li>Preheat the oven to 425°F.</li>
+            <li>Combine filling ingredients (except Brown Sugar and Butter) in a bowl and stir.</li>
+            <li>For crust, combine Flour, Salt, and Crisco. Slowly add water until dough forms a ball. Divide into 2 balls, roll out, and place one crust in pie pan.</li>
+            <li>Add filling to pie crust, then top with Brown Sugar and Butter slices.</li>
+            <li>Add the second crust, seal edges, and sprinkle Sugar and Cinnamon on top. Cut some decorative vents in the crust for steam to escape.</li>
+            <li>Bake at 425°F for 10 minutes, then reduce heat to 350°F and bake for an additional 45 minutes.</li>
+        </ol>
+
+        <div class="notes">
+            <h2>Recipe Summary</h2>
+            <p>Eat it with ice cream or eat it plain, it's delicious either way. In fact, Grandpa Ingram ate this pie in a bowl with milk poured over top so I suppose that's the traditional 
+                way to enjoy it.</p>
+        </div>
+
+        <a href="#" class="print-button" onclick="window.print(); return false;">Print Recipe</a>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; font-size: 0.9em; color: #888; background-color: #FFFDF6;">
+        <p>© 2024 My Recipe Collection. All rights reserved.</p>
+        <p><a href="#top" style="color: #1A2A40; text-decoration: underline;">Back to Top</a> | <a href="mailto:matthewingram23@gmail.com" style="color: #1A2A40; text-decoration: underline;">Contact Me</a></p>
+    </footer>
+</body>
+</html>
