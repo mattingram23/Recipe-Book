@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Recipe Collection</title>
+  <title>Recipes by Category | My Recipe Collection</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -12,6 +12,7 @@
       --nav: #1a2a40;
       --card: #fff7eb;
       --white: #ffffff;
+      --accent: #e5c4a1;
     }
 
     * {
@@ -63,6 +64,7 @@
       padding: 10px 12px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.1);
+      min-height: 44px;
     }
 
     .container {
@@ -80,45 +82,50 @@
       margin-bottom: 28px;
     }
 
-    .featured-recipes {
+    .category-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
     }
 
-    .recipe-card {
+    .category-card {
       background-color: var(--card);
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
+      border-left: 5px solid var(--accent);
+      padding: 16px;
     }
 
-    .recipe-card a {
-      color: inherit;
-      text-decoration: none;
-      display: block;
-      height: 100%;
-    }
-
-    .recipe-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .recipe-card-content {
-      padding: 15px;
-    }
-
-    .recipe-card h3 {
+    .category-card h3 {
       margin: 0 0 10px;
       font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+    }
+
+    .recipe-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .recipe-list li {
+      margin-bottom: 10px;
+    }
+
+    .recipe-list a {
+      color: var(--text);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .recipe-meta {
+      margin: 2px 0 0;
+      font-size: 0.95rem;
     }
 
     @media (min-width: 640px) {
-      .featured-recipes {
+      .category-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -136,16 +143,7 @@
         padding: 0;
         background: transparent;
         margin-left: 20px;
-      }
-
-      .featured-recipes {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .recipe-card:hover {
-        transform: translateY(-5px);
+        min-height: 0;
       }
     }
   </style>
@@ -155,46 +153,62 @@
     <div class="navbar-content">
       <h1 class="navbar-title">My Recipe Collection</h1>
       <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="recipesperson.html">Recipes by Person</a>
-        <a href="categories.html">Recipes by Type</a>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="intro">
-      <p>Welcome to my personal collection of cherished recipes - gathered from friends, family, and mentors over the years. These are not just dishes, they are memories and traditions.</p>
-      <p>Recipes are organized by the person who shared them with me. You can explore by name or enjoy a few of my current favorites below.</p>
+      <p>Browse recipes by type to quickly find what you are craving, from comfort food mains to family desserts and drinks.</p>
+      <p>Each recipe still includes the person who shared it, so the story behind the dish stays part of the experience.</p>
     </div>
 
-    <h2>Featured Recipes</h2>
-    <div class="featured-recipes">
-      <div class="recipe-card">
-        <a href="macandcheese.html">
-          <img src="images/macaroni.jpg" alt="Mac and Cheese" />
-          <div class="recipe-card-content">
-            <h3>Macaroni and Cheese</h3>
-            <p>From Randy Bussy - A rich, creamy, crowd-pleasing classic.</p>
-          </div>
-        </a>
+    <h2>Recipes by Category</h2>
+    <div class="category-grid">
+      <div class="category-card">
+        <h3>Main Dishes</h3>
+        <ul class="recipe-list">
+          <li>
+            <a href="macandcheese.html">Macaroni and Cheese</a>
+            <p class="recipe-meta">From Randy Bussy</p>
+          </li>
+        </ul>
       </div>
-      <div class="recipe-card">
-        <a href="cheesecake.html">
-          <img src="images/Cheesecake.jpg" alt="Mom's Cheesecake" />
-          <div class="recipe-card-content">
-            <h3>Mom's Cheesecake</h3>
-            <p>From Linda Juliano - A beloved family dessert passed down with love.</p>
-          </div>
-        </a>
+
+      <div class="category-card">
+        <h3>Soups and Stews</h3>
+        <ul class="recipe-list">
+          <li>
+            <a href="sinigang.html">Catherine's Sinigang</a>
+            <p class="recipe-meta">From Catherine</p>
+          </li>
+        </ul>
       </div>
-      <div class="recipe-card">
-        <a href="applepie.html">
-          <img src="images/applepie.jpg" alt="Grandma Maxine's Apple Pie" />
-          <div class="recipe-card-content">
-            <h3>Grandma Maxine's Apple Pie</h3>
-            <p>From Grandma Maxine - A timeless classic that is always warm, sweet, and comforting.</p>
-          </div>
-        </a>
+
+      <div class="category-card">
+        <h3>Desserts</h3>
+        <ul class="recipe-list">
+          <li>
+            <a href="cheesecake.html">Mom's Cheesecake</a>
+            <p class="recipe-meta">From Linda Juliano</p>
+          </li>
+          <li>
+            <a href="applepie.html">Grandma Maxine's Apple Pie</a>
+            <p class="recipe-meta">From Grandma Maxine</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category-card">
+        <h3>Drinks</h3>
+        <ul class="recipe-list">
+          <li>
+            <a href="punch.html">Dorothy's Punch</a>
+            <p class="recipe-meta">From Linda Juliano</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

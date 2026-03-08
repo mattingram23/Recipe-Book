@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -110,6 +110,88 @@
             display: block;
         }
 
+        /* Mobile Responsive Overrides */
+        * { box-sizing: border-box; }
+        body { line-height: 1.5; }
+
+        .navbar-content {
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 16px;
+        }
+
+        .navbar-title {
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+            line-height: 1.2;
+        }
+
+        .home-button {
+            display: inline-block;
+            min-height: 44px;
+        }
+
+        .print-button {
+            min-height: 44px;
+            line-height: 1.5;
+        }
+
+        .container {
+            margin: clamp(16px, 4vw, 40px) auto;
+            padding: clamp(14px, 3vw, 22px);
+        }
+
+        .chef-bio {
+            flex-wrap: wrap;
+        }
+
+        .chef-bio img {
+            width: min(100%, 180px);
+        }
+
+        h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+        h2 { font-size: clamp(1.35rem, 4.8vw, 1.8rem); }
+
+        ul, ol, .intro, .notes, .chef-bio p {
+            font-size: clamp(1rem, 2.8vw, 1.1rem);
+        }
+
+        .intro,
+        .notes {
+            padding: clamp(14px, 3vw, 20px);
+        }
+
+        @media (max-width: 700px) {
+            .navbar-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .home-button {
+                text-align: center;
+            }
+
+            .chef-bio {
+                flex-direction: column !important;
+            }
+
+            .chef-bio img,
+            .no-print,
+            .image-placeholder {
+                width: 100% !important;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            ul, ol {
+                padding-left: 20px;
+            }
+        }
+
+        @media (min-width: 701px) {
+            .navbar-content {
+                padding: 0 20px;
+            }
+        }
         @media print {
             .no-print {
                 display: none;
@@ -169,7 +251,7 @@
             <div class="chef-bio" style="flex-direction: row-reverse;">
                 <img class="no-print" src="images/macaroni.jpg" alt="Baked Macaroni and Cheese">
                 <div>
-                    <p>Indulge in a rich and creamy classic with Chef Randy Bussy’s Baked Macaroni and Cheese. Made with extra sharp cheddar and customizable with other cheeses, this dish is the perfect comfort food. Whether served as a side or a main, it's guaranteed to be a hit at any gathering.</p>
+                    <p>Indulge in a rich and creamy classic with Chef Randy Bussyâ€™s Baked Macaroni and Cheese. Made with extra sharp cheddar and customizable with other cheeses, this dish is the perfect comfort food. Whether served as a side or a main, it's guaranteed to be a hit at any gathering.</p>
                     <p>This baked macaroni and cheese is Chef Randy's signature comfort food dish. Rich, creamy, and deeply flavorful, it's the kind of recipe that brings people together. Perfect for family dinners, special events, or just when you're craving something indulgent.</p>
                 </div>
             </div>
@@ -177,7 +259,7 @@
 
         <h2>Ingredients</h2>
         <ul>
-            <li>1 pound elbow macaroni – cooked al dente</li>
+            <li>1 pound elbow macaroni â€“ cooked al dente</li>
             <li>1 quart heavy cream</li>
             <li>5 whole eggs</li>
             <li>2 pounds Shredded Extra Sharp Cheddar Cheese (shred yourself)</li>
@@ -195,7 +277,7 @@
             <li>Add shredded cheese to mixture and combine evenly.</li>
             <li>Fold in macaroni and mix thoroughly.</li>
             <li>Lightly spray a casserole dish and fill with the mixture.</li>
-            <li>Bake covered at 375°F for 40 minutes.</li>
+            <li>Bake covered at 375Â°F for 40 minutes.</li>
             <li>Remove foil and bake for another 15-20 minutes until golden brown and bubbly.</li>
             <li>Let rest for 15 minutes before serving.</li>
         </ol>
@@ -230,8 +312,10 @@
         };
     </script>
     <footer style="text-align: center; padding: 20px; font-size: 0.9em; color: #888; background-color: #FFFDF6;">
-        <p>© 2024 My Recipe Collection. All rights reserved.</p>
+        <p>Â© 2024 My Recipe Collection. All rights reserved.</p>
         <p><a href="#top" style="color: #1A2A40; text-decoration: underline;">Back to Top</a> | <a href="mailto:matthewingram23@gmail.com" style="color: #1A2A40; text-decoration: underline;">Contact Me</a></p>
     </footer>
 </body>
 </html>
+
+

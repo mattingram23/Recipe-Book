@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -23,6 +23,88 @@
         .print-button { display: block; text-align: center; background-color: #1A2A40; color: white; padding: 10px; margin-top: 20px; border-radius: 5px; text-decoration: none; }
         .print-button:hover { background-color: #0F1A2B; }
         .no-print { display: block; }
+        /* Mobile Responsive Overrides */
+        * { box-sizing: border-box; }
+        body { line-height: 1.5; }
+
+        .navbar-content {
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 16px;
+        }
+
+        .navbar-title {
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+            line-height: 1.2;
+        }
+
+        .home-button {
+            display: inline-block;
+            min-height: 44px;
+        }
+
+        .print-button {
+            min-height: 44px;
+            line-height: 1.5;
+        }
+
+        .container {
+            margin: clamp(16px, 4vw, 40px) auto;
+            padding: clamp(14px, 3vw, 22px);
+        }
+
+        .chef-bio {
+            flex-wrap: wrap;
+        }
+
+        .chef-bio img {
+            width: min(100%, 180px);
+        }
+
+        h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+        h2 { font-size: clamp(1.35rem, 4.8vw, 1.8rem); }
+
+        ul, ol, .intro, .notes, .chef-bio p {
+            font-size: clamp(1rem, 2.8vw, 1.1rem);
+        }
+
+        .intro,
+        .notes {
+            padding: clamp(14px, 3vw, 20px);
+        }
+
+        @media (max-width: 700px) {
+            .navbar-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .home-button {
+                text-align: center;
+            }
+
+            .chef-bio {
+                flex-direction: column !important;
+            }
+
+            .chef-bio img,
+            .no-print,
+            .image-placeholder {
+                width: 100% !important;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            ul, ol {
+                padding-left: 20px;
+            }
+        }
+
+        @media (min-width: 701px) {
+            .navbar-content {
+                padding: 0 20px;
+            }
+        }
         @media print { .no-print { display: none; } }
     </style>
 </head>
@@ -86,12 +168,12 @@
 
         <h2>Instructions</h2>
         <ol>
-            <li>Preheat the oven to 425°F.</li>
+            <li>Preheat the oven to 425Â°F.</li>
             <li>Combine filling ingredients (except Brown Sugar and Butter) in a bowl and stir.</li>
             <li>For crust, combine Flour, Salt, and Crisco. Slowly add water until dough forms a ball. Divide into 2 balls, roll out, and place one crust in pie pan.</li>
             <li>Add filling to pie crust, then top with Brown Sugar and Butter slices.</li>
             <li>Add the second crust, seal edges, and sprinkle Sugar and Cinnamon on top. Cut some decorative vents in the crust for steam to escape.</li>
-            <li>Bake at 425°F for 10 minutes, then reduce heat to 350°F and bake for an additional 45 minutes.</li>
+            <li>Bake at 425Â°F for 10 minutes, then reduce heat to 350Â°F and bake for an additional 45 minutes.</li>
         </ol>
 
         <div class="notes">
@@ -104,8 +186,9 @@
     </div>
 
     <footer style="text-align: center; padding: 20px; font-size: 0.9em; color: #888; background-color: #FFFDF6;">
-        <p>© 2024 My Recipe Collection. All rights reserved.</p>
+        <p>Â© 2024 My Recipe Collection. All rights reserved.</p>
         <p><a href="#top" style="color: #1A2A40; text-decoration: underline;">Back to Top</a> | <a href="mailto:matthewingram23@gmail.com" style="color: #1A2A40; text-decoration: underline;">Contact Me</a></p>
     </footer>
 </body>
 </html>
+
