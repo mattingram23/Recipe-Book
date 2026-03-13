@@ -1,90 +1,177 @@
 :root {
-  --bg: #fffdf6;
-  --text: #1a2a40;
-  --nav: #1a2a40;
-  --card: #fff7eb;
+  --ink: #1e2f3f;
+  --paper: #f7f1e4;
+  --paper-soft: #fbf7ef;
+  --navy: #0f2f45;
+  --copper: #bc7a47;
+  --copper-deep: #9e6133;
+  --line: #dcc9ae;
+  --card: #fffdfa;
   --white: #ffffff;
-  --accent: #e5c4a1;
+  --shadow-soft: 0 10px 26px rgba(15, 47, 69, 0.12);
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: "Lora", serif;
   margin: 0;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1300px 620px at 88% -8%, rgba(188, 122, 71, 0.16), transparent 58%),
+    radial-gradient(1200px 550px at -10% 120%, rgba(15, 47, 69, 0.08), transparent 62%),
+    var(--paper);
+  line-height: 1.55;
 }
 
 .navbar {
-  background-color: var(--nav);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(15, 47, 69, 0.96), rgba(15, 47, 69, 0.9));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .navbar-content {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-  padding: 12px 16px;
+  padding: 10px 16px;
 }
 
 .navbar-title {
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
-  font-family: "Playfair Display", serif;
-  color: var(--white);
   margin: 0;
-  flex: 1 1 220px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  letter-spacing: 0.02em;
+  flex: 1 1 240px;
+}
+
+.navbar-title a {
+  color: var(--white);
+  text-decoration: none;
 }
 
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
 }
 
 .nav-links a {
-  color: var(--white);
+  color: #f8ecdb;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   display: inline-block;
-  padding: 10px 12px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.nav-links a.active {
+  background: linear-gradient(135deg, var(--copper), var(--copper-deep));
+  color: var(--white);
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: clamp(16px, 4vw, 40px) auto;
-  padding: clamp(14px, 3vw, 24px);
-  background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: clamp(16px, 3vw, 28px);
+  background: linear-gradient(180deg, var(--card), #fff8ea);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  animation: fade-up 520ms ease both;
 }
 
 .intro {
-  font-size: clamp(1rem, 2.6vw, 1.1rem);
+  font-size: clamp(1rem, 2.5vw, 1.14rem);
   line-height: 1.7;
   margin-bottom: 28px;
+  background: linear-gradient(180deg, var(--paper-soft), #fff8ea);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: clamp(14px, 3vw, 20px);
 }
 
-@media (min-width: 900px) {
-  .navbar-content {
-    padding: 15px 20px;
+h2 {
+  font-family: "Fraunces", serif;
+  color: #1b354a;
+  font-size: clamp(1.35rem, 3vw, 1.95rem);
+  margin: 0 0 14px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #ffd299;
+  outline-offset: 2px;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #6f5d4b;
+}
+
+.site-footer a {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 990px) {
   .nav-links {
     width: auto;
   }
 
   .nav-links a {
     padding: 0;
+    border-radius: 0;
     background: transparent;
-    margin-left: 20px;
+  }
+
+  .nav-links a.active {
+    background: none;
+    border-bottom: 2px solid var(--copper);
+    padding-bottom: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

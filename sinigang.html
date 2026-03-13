@@ -4,24 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catherine's Sinigang</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles/common.css" />
   <link rel="stylesheet" href="styles/recipe.css" />
 </head>
-<body>
-    <div class="navbar">
-        <div class="navbar-content">
-            <h1 class="navbar-title">My Recipe Collection</h1>
-            <div class="nav-links">
-                <a href="recipesperson.html">Recipes by Person</a>
-                <a href="categories.html">Recipes by Type</a>
-            </div>
-        </div>
+<body id="top" data-recipe-key="sinigang">
+  <div class="navbar">
+    <div class="navbar-content">
+      <h1 class="navbar-title"><a href="index.html">My Recipe Collection</a></h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="recipesperson.html">Recipes by Person</a>
+        <a href="categories.html">Recipes by Type</a>
+      </div>
     </div>
-
-    <div class="container">
-        <!-- Chef/Contributor Section -->
-        <div class="chef-bio">
+  </div>
+  <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span>&gt;</span>
+            <a href="categories.html">Soups and Stews</a>
+            <span>&gt;</span>
+            <span aria-current="page">Catherine's Sinigang</span>
+        </nav>
+<div class="chef-bio">
             <img src="images/catherine.jpg" alt="Contributor Photo">
             <p>
                 <!-- Contributor bio goes here -->
@@ -30,10 +36,30 @@
             </p>
         </div>
 
-        <!-- Recipe Title -->
-        <h1>Catherine's Sinigang</h1>
+                <h1>Catherine's Sinigang</h1>
+
+        <dl class="recipe-quick-facts" aria-label="Recipe quick facts">
+            <div class="recipe-fact">
+                <dt>Category</dt>
+                <dd>Soup/Stew</dd>
+            </div>
+            <div class="recipe-fact">
+                <dt>Prep Time</dt>
+                <dd>20 min</dd>
+            </div>
+            <div class="recipe-fact">
+                <dt>Cook Time</dt>
+                <dd>60-90 min</dd>
+            </div>
+            <div class="recipe-fact">
+                <dt>Servings</dt>
+                <dd>6-8</dd>
+            </div>
+        </dl>
 
         <!-- Description + Image -->
+                <h2>Recipe Story</h2>
+
         <div class="intro">
             <div class="chef-bio reverse">
                 <img class="no-print" src="images/placeholder.jpg" alt="Dish Photo">
@@ -90,15 +116,20 @@
         window.onload = function () {
             const chefImages = ["images/chef.jpg", "images/chef2.jpg"];
             const randomImage = chefImages[Math.floor(Math.random() * chefImages.length)];
-            document.getElementById("chefImage").src = randomImage;
+            const chefImage = document.getElementById("chefImage");
+            if (chefImage) {
+                chefImage.src = randomImage;
+            }
         };
     </script>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p>© 2024 My Recipe Collection. All rights reserved.</p>
+        <p>&copy; 2026 My Recipe Collection. All rights reserved.</p>
         <p><a href="#top">Back to Top</a> | <a href="mailto:matthewingram23@gmail.com">Contact Me</a></p>
     </footer>
+    <script src="scripts/recipe-data.js"></script>
+    <script src="scripts/recipe-meta.js"></script>
 </body>
 </html>
 

@@ -1,6 +1,63 @@
 .container {
-  max-width: 900px;
-  padding: clamp(14px, 3vw, 22px);
+  max-width: 980px;
+  padding: clamp(16px, 3vw, 26px);
+}
+
+.breadcrumb {
+  margin-bottom: 14px;
+  color: #7b5a3a;
+  font-size: 0.94rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb a {
+  color: #7b5a3a;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.container > h1 {
+  margin: 4px 0 16px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+  line-height: 1.12;
+  text-align: center;
+  color: #1b354a;
+}
+
+.recipe-quick-facts {
+  margin: 0 0 18px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.recipe-fact {
+  background: #fff;
+  border: 1px solid #e8d4b8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.recipe-fact dt {
+  margin: 0;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #8e6240;
+}
+
+.recipe-fact dd {
+  margin: 3px 0 0;
+  font-weight: 700;
+  color: #1f374b;
 }
 
 .chef-bio {
@@ -16,55 +73,57 @@
 }
 
 .chef-bio img {
-  width: min(100%, 180px);
+  width: min(100%, 190px);
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
+  border: 1px solid #e7d1b4;
 }
 
 .chef-bio p {
-  font-size: clamp(1rem, 2.8vw, 1.1rem);
-  line-height: 1.6;
+  font-size: clamp(1rem, 2.6vw, 1.12rem);
+  line-height: 1.65;
+  margin: 0;
 }
 
-h1 {
-  font-size: clamp(1.6rem, 6vw, 2.2rem);
-  color: #050505;
-  text-align: center;
+.intro,
+.toppings,
+.notes {
+  background: linear-gradient(180deg, var(--paper-soft), #fff8ea);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--copper);
+  border-radius: 10px;
+  padding: clamp(14px, 2.8vw, 20px);
+  margin: 20px 0;
 }
 
 h2 {
-  font-size: clamp(1.35rem, 4.8vw, 1.8rem);
-  color: #050505;
   margin-top: 30px;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--line);
+}
+
+h3 {
+  margin-bottom: 8px;
+  color: #224258;
 }
 
 ul,
 ol,
 .intro,
 .notes {
-  font-size: clamp(1rem, 2.8vw, 1.1rem);
-  line-height: 1.6;
+  font-size: clamp(1rem, 2.6vw, 1.1rem);
+  line-height: 1.62;
 }
 
 ul,
 ol {
-  padding-left: 25px;
+  padding-left: 24px;
 }
 
-.intro,
-.toppings {
-  background-color: var(--card);
-  padding: clamp(14px, 3vw, 20px);
-  border-left: 5px solid var(--accent);
-  margin: 20px 0;
-}
-
-.notes {
-  padding: clamp(14px, 3vw, 20px);
-  margin: 20px 0;
+li {
+  margin-bottom: 4px;
 }
 
 .image-placeholder {
@@ -73,9 +132,9 @@ ol {
   object-fit: cover;
   display: block;
   margin: 20px auto;
-  border-radius: 8px;
-  border: 4px solid var(--accent);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 3px solid var(--line);
+  box-shadow: 0 8px 20px rgba(15, 47, 69, 0.1);
 }
 
 .dish-image-narrow {
@@ -86,18 +145,19 @@ ol {
 .print-button {
   display: block;
   text-align: center;
-  background-color: var(--nav);
+  background: linear-gradient(135deg, var(--copper), var(--copper-deep));
   color: var(--white);
-  padding: 10px;
+  padding: 11px 14px;
   margin-top: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   min-height: 44px;
-  line-height: 1.5;
+  font-weight: 700;
+  box-shadow: 0 8px 16px rgba(158, 97, 51, 0.25);
 }
 
 .print-button:hover {
-  background-color: #0f1a2b;
+  filter: brightness(1.05);
 }
 
 .no-print {
@@ -109,20 +169,7 @@ ol {
   margin-left: -20px;
 }
 
-.site-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #888;
-  background-color: var(--bg);
-}
-
-.site-footer a {
-  color: var(--text);
-  text-decoration: underline;
-}
-
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .chef-bio {
     flex-direction: column !important;
   }
@@ -141,8 +188,24 @@ ol {
   }
 }
 
+@media (min-width: 760px) {
+  .recipe-quick-facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media print {
-  .no-print {
+  .no-print,
+  .navbar,
+  .print-button,
+  .site-footer {
     display: none;
+  }
+
+  .container {
+    box-shadow: none;
+    border: 0;
+    margin: 0;
+    max-width: 100%;
   }
 }

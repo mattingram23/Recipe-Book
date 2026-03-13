@@ -1,22 +1,30 @@
-.category-grid {
+.category-grid,
+.people-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 14px;
+}
+
+.category-card,
+.person-card {
+  background: var(--card);
+  border: 1px solid #ead8bf;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 24px rgba(15, 47, 69, 0.11);
+  overflow: hidden;
 }
 
 .category-card {
-  background-color: var(--card);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid var(--accent);
+  border-left: 5px solid var(--copper);
   padding: 16px;
 }
 
-.category-card h3 {
+.category-card h3,
+.person-card h3 {
   margin: 0 0 10px;
-  font-family: "Playfair Display", serif;
-  font-size: 1.3rem;
+  font-family: "Fraunces", serif;
+  color: #1b354a;
+  font-size: 1.24rem;
 }
 
 .recipe-list {
@@ -29,30 +37,43 @@
   margin-bottom: 10px;
 }
 
-.recipe-list a {
-  color: var(--text);
+.recipe-list a,
+.person-card-content a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.recipe-list a:hover,
+.person-card-content a:hover {
   text-decoration: underline;
-  font-weight: 600;
 }
 
 .recipe-meta {
   margin: 2px 0 0;
-  font-size: 0.95rem;
-}
-
-.people-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  font-size: 0.92rem;
+  color: #445a69;
 }
 
 .person-card {
-  background-color: var(--card);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
   text-align: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(15, 47, 69, 0.16);
+}
+
+.person-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+
+.person-card-link:hover {
+  text-decoration: none;
 }
 
 .person-card img {
@@ -61,8 +82,8 @@
   height: 180px;
   object-fit: contain;
   object-position: center;
-  background-color: var(--card);
-  border-radius: 8px;
+  background-color: var(--paper-soft);
+  border-radius: 10px;
   margin: 15px auto 0;
   display: block;
 }
@@ -71,31 +92,39 @@
   padding: 15px;
 }
 
-.person-card h3 {
-  margin: 0 0 10px;
-  font-family: "Playfair Display", serif;
+.person-card-content p {
+  margin: 0;
+  color: #445a69;
+}
+
+.person-card-content .profile-cta {
+  margin-top: 8px;
+  color: var(--copper-deep);
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .browse-button {
   display: block;
   width: fit-content;
-  margin: 40px auto 0;
-  background-color: var(--nav);
+  margin: 34px auto 0;
+  background: linear-gradient(135deg, var(--copper), var(--copper-deep));
   color: var(--white);
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 18px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
+  box-shadow: 0 8px 16px rgba(158, 97, 51, 0.25);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 700px) {
   .category-grid,
   .people-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1020px) {
   .people-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -103,12 +132,5 @@
   .person-card img {
     width: 90%;
     max-width: none;
-    margin: 15px auto 0;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .person-card:hover {
-    transform: translateY(-5px);
   }
 }
