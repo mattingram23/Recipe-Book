@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mom's Cheesecake (Layout Example) | My Recipe Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/common.css" />
+  <style>
+    .container {
+      max-width: 980px;
+      padding: clamp(16px, 3vw, 26px);
+    }
+
+    .breadcrumb {
+      margin-bottom: 14px;
+      color: #7b5a3a;
+      font-size: 0.94rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .breadcrumb a {
+      color: #7b5a3a;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .recipe-title {
+      margin: 0 0 14px;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.75rem, 4.2vw, 2.6rem);
+      line-height: 1.12;
+      text-align: center;
+      color: #1b354a;
+    }
+
+    .recipe-quick-facts {
+      margin: 0 0 20px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .recipe-fact {
+      background: #fff;
+      border: 1px solid #e8d4b8;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .recipe-fact dt {
+      margin: 0;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #8e6240;
+    }
+
+    .recipe-fact dd {
+      margin: 3px 0 0;
+      font-weight: 700;
+      color: #1f374b;
+    }
+
+    .story-card {
+      background: linear-gradient(180deg, var(--paper-soft), #fff8ea);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--copper);
+      border-radius: 10px;
+      padding: clamp(14px, 2.8vw, 20px);
+      margin-bottom: 20px;
+    }
+
+    .story-card h2 {
+      margin: 0 0 12px;
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .story-media {
+      margin: 0;
+      justify-self: start;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .story-media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e7d1b4;
+      display: block;
+    }
+
+    .story-copy {
+      margin: 0;
+      max-width: 68ch;
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      line-height: 1.64;
+    }
+
+    .recipe-sections {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-card {
+      background: #fff;
+      border: 1px solid #e8d4b8;
+      border-radius: 12px;
+      padding: clamp(14px, 2.6vw, 20px);
+      box-shadow: 0 6px 16px rgba(15, 47, 69, 0.08);
+    }
+
+    .section-card h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 6px;
+    }
+
+    .section-card h3 {
+      color: #224258;
+      margin-bottom: 8px;
+    }
+
+    .section-card ul {
+      margin-top: 0;
+      padding-left: 22px;
+    }
+
+    .section-card li {
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+
+    .steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: step;
+      display: grid;
+      gap: 10px;
+    }
+
+    .steps li {
+      margin: 0;
+      padding: 10px 12px;
+      border: 1px solid #eddac0;
+      border-radius: 10px;
+      background: #fffdfa;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--copper), var(--copper-deep));
+      box-shadow: 0 4px 10px rgba(158, 97, 51, 0.25);
+      margin-top: 1px;
+    }
+
+    .notes-card {
+      background: linear-gradient(180deg, var(--paper-soft), #fff8ea);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--copper);
+      border-radius: 10px;
+      padding: clamp(14px, 2.8vw, 20px);
+      margin-bottom: 20px;
+    }
+
+    .print-button {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, var(--copper), var(--copper-deep));
+      color: var(--white);
+      padding: 11px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      min-height: 44px;
+      font-weight: 700;
+      box-shadow: 0 8px 16px rgba(158, 97, 51, 0.25);
+      width: min(280px, 100%);
+      margin: 0 auto;
+    }
+
+    @media (min-width: 760px) {
+      .recipe-quick-facts {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .story-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .story-copy {
+        order: 1;
+      }
+
+      .story-media {
+        order: 2;
+        justify-self: end;
+      }
+
+      .recipe-sections {
+        grid-template-columns: 1fr 1.15fr;
+      }
+    }
+
+    @media print {
+      .navbar,
+      .print-button,
+      .site-footer {
+        display: none;
+      }
+
+      .container {
+        box-shadow: none;
+        border: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <div class="navbar">
+    <div class="navbar-content">
+      <h1 class="navbar-title"><a href="index.html">My Recipe Collection</a></h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="recipesperson.html">Recipes by Person</a>
+        <a href="categories.html">Recipes by Type</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&gt;</span>
+      <a href="categories.html">Desserts</a>
+      <span>&gt;</span>
+      <span aria-current="page">Mom's Cheesecake (Layout Example)</span>
+    </nav>
+
+    <h1 class="recipe-title">Mom's Cheesecake</h1>
+
+    <dl class="recipe-quick-facts" aria-label="Recipe quick facts">
+      <div class="recipe-fact">
+        <dt>Category</dt>
+        <dd>Dessert</dd>
+      </div>
+      <div class="recipe-fact">
+        <dt>Prep Time</dt>
+        <dd>25 min</dd>
+      </div>
+      <div class="recipe-fact">
+        <dt>Cook Time</dt>
+        <dd>10 min + chill</dd>
+      </div>
+      <div class="recipe-fact">
+        <dt>Servings</dt>
+        <dd>10-12</dd>
+      </div>
+    </dl>
+
+    <section class="story-card">
+      <h2>Recipe Story</h2>
+      <div class="story-grid">
+        <p class="story-copy">This is the first recipe that came to mind when starting to add recipes to this site. The cheesecake is an absolute legend in our family. I have loved this dessert my entire life. To me, this is the epitome of a family recipe. It's rich and creamy from the cream cheese and the crumble crust gives it a nice crunch.</p>
+        <figure class="story-media">
+          <img src="images/Cheesecake.jpg" alt="Cheesecake in a baking dish" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="recipe-sections">
+      <section class="section-card">
+        <h2>Ingredients</h2>
+
+        <h3>Crust</h3>
+        <ul>
+          <li>1 stick of butter</li>
+          <li>1 1/4 cups flour</li>
+          <li>1/2 cup brown sugar</li>
+          <li>1/2 teaspoon salt</li>
+        </ul>
+
+        <h3>Filling</h3>
+        <ul>
+          <li>1 large cream cheese (update with exact measurement)</li>
+          <li>1 cup sugar</li>
+          <li>1 large Cool Whip</li>
+        </ul>
+
+        <h3>Topping</h3>
+        <ul>
+          <li>1 bag prepared strawberry glaze</li>
+          <li>1 pound fresh strawberries, sliced</li>
+          <li><em>or</em></li>
+          <li>1 can cherry pie filling</li>
+        </ul>
+      </section>
+
+      <section class="section-card">
+        <h2>Instructions</h2>
+        <ol class="steps">
+          <li><span><strong>Crust:</strong> Combine ingredients in a baking pan using a fork to create a crumbly texture that is roughly blueberry sized.</span></li>
+          <li><span>Bake in a preheated oven at 400&deg;F for 10 minutes. Stir several times while baking. Remove when deep golden brown and allow to cool.</span></li>
+          <li><span>Add mixture to the bottom of your serving dish, reserving one-third for topping.</span></li>
+          <li><span><strong>Filling:</strong> Mix ingredients together and spoon over cooled crust.</span></li>
+          <li><span><strong>Strawberry Topping:</strong> Mix glaze with sliced strawberries and spread over filling. Add reserved crust crumbles on top.</span></li>
+          <li><span>Enjoy.</span></li>
+        </ol>
+      </section>
+    </div>
+
+    <section class="notes-card">
+      <h2>Recipe Summary</h2>
+      <p>Though it is not a traditional cheesecake, it has achieved legendary status in our family. We are talking more than 40 years of loving this dessert. It has traditionally been served in a large baking dish, but it can be served in almost any vessel. Individual serving cups make a nice presentation and travel well. Though cherry and strawberry are most popular in our family, almost any berry topping works well.</p>
+    </section>
+
+    <a href="#" class="print-button" onclick="window.print(); return false;">Print Recipe</a>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 My Recipe Collection. All rights reserved.</p>
+    <p><a href="#top">Back to Top</a> | <a href="mailto:matthewingram23@gmail.com">Contact Me</a></p>
+  </footer>
+</body>
+</html>
