@@ -87,6 +87,14 @@
     cookTime: "60 min",
     servings: "8-10"
   },
+  pancakes: {
+    title: "Pancakes",
+    crumb: "Breakfast",
+    category: "Breakfast",
+    prepTime: "10 min",
+    cookTime: "5 min",
+    servings: "3-4 people (10 pancakes)"
+  },
   pecanpie: {
     title: "Pecan Pie",
     crumb: "Desserts",
