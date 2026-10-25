@@ -57,8 +57,8 @@
   },
   italianmeatsauce: {
     title: "Italian Meat Sauce",
-    crumb: "Sides and Sauces",
-    category: "Sauce",
+    crumb: "Main Dishes",
+    category: "Main Dish",
     prepTime: "TBD",
     cookTime: "45-60 min simmer, plus initial cooking",
     servings: "6-8"
