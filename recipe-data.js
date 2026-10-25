@@ -47,6 +47,14 @@
     cookTime: "45-60 min",
     servings: "6-8"
   },
+  chickenpotpie: {
+    title: "Chicken Pot Pie",
+    crumb: "Main Dishes",
+    category: "Main Dish",
+    prepTime: "20 min",
+    cookTime: "About 60 min baking, plus stovetop cooking",
+    servings: "6"
+  },
   italianmeatsauce: {
     title: "Italian Meat Sauce",
     crumb: "Sides and Sauces",
